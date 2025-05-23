@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation, useViewportScroll, useTransform } from 'framer-motion';
+import { motion, useAnimation, useTransform, useScroll } from 'framer-motion';
 import { useDarkMode } from '../context/DarkModeContext';
 
 const Hero: React.FC = () => {
@@ -7,12 +7,12 @@ const Hero: React.FC = () => {
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
   const textBoxControls = useAnimation();
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const yTransform = useTransform(scrollY, [0, 350], [14, -300]);
   const yTransformTopImage = useTransform(scrollY, [0, 400], [0, 400]);
   const scaleTransformTopImage = useTransform(scrollY, [0, 400], [1, 0.87]);
-  const yHeroTransform = useTransform(scrollY, [0, 400], [-200, -50]);
-  //const yTransformTextBox = useTransform(scrollY, [250, 650], [-200, 0]);
+  // const yHeroTransform = useTransform(scrollY, [0, 400], [-200, -50]);
+  // //const yTransformTextBox = useTransform(scrollY, [250, 650], [-200, 0]);
 
 
   const topImageSrc = darkMode ? '/HeroLightTop.png' : '/HeroDarkTop.png';
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     'Hello',
     'नमस्ते',
     'ನಮಸ್ಕಾರ',
-    'नमस्कार',
+    'Ciao',
     'Salut',
     '你好',
     'Hola'
@@ -163,9 +163,8 @@ const Hero: React.FC = () => {
             className="flex-1 pl-8 flex flex-col justify-end items-right top-1/2 right-10 transform -translate-y-1/2 p-5"
             initial={{ opacity: 0, y: -200 }}
             animate={textBoxControls}
-            style={{ y: yHeroTransform }}
         >
-            <h2 className="text-xl font-bold">Hello, I am Ansh! A Software Developer and Product Design enthusiast based in India</h2>
+            <h2 className="text-xl font-bold">Hello, I am Ansh! A Software Designer and Developer based out of India</h2>
             <p className="mt-2">I enjoy building products and creating experiences with a human centered approach in the digital space.</p>
         </motion.div>
         </div>

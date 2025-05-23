@@ -1,0 +1,50 @@
+/* Button styles */
+.theme-toggle-button {
+  position: relative;
+  width: 2.5rem; /* 10 w */
+  height: 2.5rem; /* 10 h */
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem; /* rounded-lg */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  transition: all 0.3s ease-in-out;
+  box-shadow: none;
+}
+
+.theme-toggle-button.hover {
+  box-shadow: 4px 4px 0px 0px var(--hover-shadow-color);
+}
+
+.theme-toggle-button:active {
+  box-shadow: 2px 2px 0px 0px var(--active-shadow-color);
+}
+
+/* Moon icon */
+.moon-icon {
+  color: var(--text-color);
+}
+
+/* Sun icon */
+.sun-icon {
+  color: var(--text-color);
+}
+
+/* Dark mode variables */
+:root {
+  --border-color: #1f2937; /* gray-800 */
+  --bg-color: #ffffff; /* white */
+  --hover-shadow-color: rgba(0, 0, 0, 1);
+  --active-shadow-color: rgba(0, 0, 0, 1);
+  --text-color: #1f2937; /* gray-800 */
+}
+
+.dark {
+  --border-color: #ffffff; /* white */
+  --bg-color: #1a202c; /* gray-900 */
+  --hover-shadow-color: rgba(255, 255, 255, 1);
+  --active-shadow-color: rgba(255, 255, 255, 1);
+  --text-color: #ffffff; /* white */
+}
